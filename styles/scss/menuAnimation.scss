@@ -1,0 +1,57 @@
+.menu {
+  background: #fff;
+  color: #222;
+  border: 0;
+  border-radius: 0.25rem;
+  padding: 0;
+}
+.menu-content {
+  padding: 1rem;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes slide-in {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes slide-out {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+.menu[open] {
+  display: flex;
+  animation: 
+    slide-in 500ms forwards,
+    fade-in 500ms forwards;
+}
+.menu[closing] {
+  display: block;
+  pointer-events: none;
+  inset: 0;
+  animation: 
+    slide-out 500ms forwards,
+    fade-out 500ms forwards;
+}
